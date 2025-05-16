@@ -5,4 +5,4 @@ Inspired by real-world personal finance tools and educational initiatives on fin
 
 This console-based application allows users to input their earnings and expenses, organize spending into categories (like rent, food, entertainment, etc.), and receive a summary that shows if they are staying within their budget limits.
 
-Besides being a practical tool, this project serves as a learning opportunity to apply core programming concepts such as class design, encapsulation, composition, and dynamic data structures like vectors. It is also a stepping stone for anyone interested in developing more complex finance applications in the future.
+Besides being a practical tool, this project serves as a learning opportunity to apply core programming concepts such as class design, encapsulation, composition. It is also a stepping stone for developing more complex finance applications in the future. 
