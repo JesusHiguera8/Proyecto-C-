@@ -10,35 +10,20 @@ Besides being a practical tool, this project serves as a learning opportunity to
 ## Class Descriptions and Problem Solving
 The core problem this system aims to solve is providing a structured way for a user to track their income, expenses, and manage their budget across different categories.
 
-1. FinancialRecord (Base Class)
-Description: This is an abstract base class that represents any transaction that affects a user's financial standing. It holds common attributes like the date, a description of the transaction, and the amount. It also defines virtual functions (displayRecordDetails and getRecordType) to ensure that all specific financial record types (like income or expense) can be treated uniformly through polymorphism.
-How it Solves the Problem:
- - Abstraction: It encapsulates the shared characteristics of all financial transactions, reducing code duplication.
- - Polymorphism: By defining virtual methods, it allows PersonalBudget to store and process a vector of FinancialRecord pointers, regardless of whether they are IncomeRecords or ExpenseRecords. This enables generic handling of records (e.g., in a financial report) while still allowing specific details to be displayed.
+1. FinancialRecord
+ - Description: The blueprint for any money movement. It ensures every transaction has a date, description, and amount, providing a universal standard.
+ - How it Solves the Problem: It unifies how all money events are handled, making it easy to process income and expenses together for reports and calculations.
 2. IncomeRecord
-Description: This class inherits from FinancialRecord and specifically represents money coming in. It adds an incomeSource attribute to capture where the money originated. It overrides the virtual methods from FinancialRecord to provide specific details for income.
-How it Solves the Problem:
- - Specialization: It extends the general FinancialRecord to model income distinctively.
- - Detailed Tracking: Allows users to categorize and understand where their money is coming from.
- - Contribution to Balance: Its amount directly contributes positively to the overall financial balance.
+ - Description: Specifically tracks money flowing in, adding details like the income's source (e.g., "Salary").
+ - How it Solves the Problem: Clearly identifies your earnings, allowing the system to calculate your total income and understand where your wealth originates.
 3. BudgetCategory
-Description: This class represents a defined spending area within the budget (e.g., "Groceries", "Utilities"). It tracks the categoryName, an allocatedAmount (how much the user plans to spend), and the spentAmount (how much has actually been spent). It provides methods to add expenses, check remaining budget, and determine if the category is over budget. It also includes an overloaded operator+ to combine the financial stats of two categories.
-How it Solves the Problem:
- - Budget Planning: Enables the user to set financial limits for different areas of spending.
- - Spending Control: By tracking spentAmount against allocatedAmount, it helps users monitor their spending and identify potential overspending early.
- - Flexibility with Operator Overloading: The operator+ allows for convenient summation of financial metrics across different categories, which can be useful for higher-level reporting or analysis (e.g., "How much did I spend on food and housing combined?").
+ - Description: Your digital spending envelope. You set an allocatedAmount for a named category (e.g., "Groceries"), and it tracks your spentAmount against that limit.
+ - How it Solves the Problem: Actively monitors your spending against predefined limits, preventing overspending and instantly showing how much you have left in each area. The operator+ helps combine spending insights across categories.
 4. ExpenseRecord
-Description: This class inherits from FinancialRecord and represents money going out. It includes a paymentMethod and, crucially, a pointer to an associated BudgetCategory. When an ExpenseRecord is created, its amount is added to the spentAmount of its linked BudgetCategory.
-How it Solves the Problem:
- - Specialization: Models outflows of money.
- - Category Linkage: The direct association with BudgetCategory is fundamental. It ensures that every expense directly impacts the relevant budget category, making real-time budget tracking possible. This is where the budget control mechanism is primarily enforced.
- - Payment Method Tracking: Offers additional detail for understanding spending patterns (e.g., "Am I relying too much on credit cards for certain expenses?").
+ - Description: Your digital receipt for money going out. It logs payment method and, critically, links directly to its BudgetCategory to update spending.
+ - How it Solves the Problem: Automatically updates your budget categories in real-time with every expense, providing an immediate and accurate view of remaining funds for specific spending areas.
 5. PersonalBudget
-Description: This is the central "manager" class of the system. It holds a user's userName, a vector of FinancialRecord pointers (allowing for both income and expense records), and a vector of BudgetCategory objects. It provides methods to add new financial records and categories, record specific income/expenses, calculate total income, expenses, and current balance, and generate comprehensive financial reports.
-How it Solves the Problem:
- - Central Control: Acts as the main interface for the user, orchestrating interactions between financial records and budget categories.
- - Data Aggregation: Collects and manages all financial data (records and categories) for a single user.
- - Comprehensive Reporting: Generates a holistic view of the user's financial health, summarizing income, expenses, balance, and providing detailed breakdowns per category.
- - User Interface Logic (Implicit): This class would expose the high-level functions that a user would interact with (e.g., "add income," "record expense," "show report").
+ - Description: Your central financial dashboard. It manages all your financial records and budget categories, processes transactions, and generates reports.
+ - How it Solves the Problem: Provides a comprehensive overview of your financial health (income, expenses, balance, budget status) and serves as the main point of interaction for managing your money.
 
 ![UML_project (7)](https://github.com/user-attachments/assets/29c4c7bc-0064-4e90-b95c-38d94abf5225)
