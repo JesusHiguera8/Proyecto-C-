@@ -7,4 +7,5 @@ This console-based application allows users to input their earnings and expenses
 
 Besides being a practical tool, this project serves as a learning opportunity to apply core programming concepts such as class design, encapsulation, composition. It is also a stepping stone for developing more complex finance applications in the future. 
 
-![UML_project (6)](https://github.com/user-attachments/assets/9f571086-7f46-4d92-8fcf-891196a1994d)
+
+![UML_project (7)](https://github.com/user-attachments/assets/29c4c7bc-0064-4e90-b95c-38d94abf5225)
