@@ -25,5 +25,7 @@ The core problem this system aims to solve is providing a structured way for a u
 5. PersonalBudget
  - Description: Your central financial dashboard. It manages all your financial records and budget categories, processes transactions, and generates reports.
  - How it Solves the Problem: Provides a comprehensive overview of your financial health (income, expenses, balance, budget status) and serves as the main point of interaction for managing your money.
+ - 
+![UML_project (8)](https://github.com/user-attachments/assets/650fea7c-bc67-4365-ab19-a1e07d10ce33)
 
-![UML_project (7)](https://github.com/user-attachments/assets/29c4c7bc-0064-4e90-b95c-38d94abf5225)
+
